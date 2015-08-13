@@ -75,7 +75,7 @@
 									</header>
 									<p>
 									All electronic systems on the robot are designed to be simple and modular, in order to allow for a system that is easily built, easily serviceable, and easy to troubleshoot. </p>
-									<p>There were 3 main types of circuits used on this robot. These were: infrared signal processing circuits, a power distribution circuit, and H-Bridge motor driver circuits. Additionally, we used simple signal debouncing circuits to process the signals coming from the various contact switches used on the robot. A rotary potentiometer was used to provide position feedback for our main arm.</p>
+									<p>There were 3 main types of circuits used on this robot. These were: infrared signal processing circuits, a power distribution circuit, and H-Bridge motor driver circuits. Additionally, we used simple signal debouncing circuits to process the signals coming from the various contact switches used on the robot. A rotary potentiometer was used to provide position feedback for our main arm, and infrared phototransistors were used to help the robot navigate the course.</p>
 									<p>Below is an overview diagrams showing how all of the circuits, and sensors on the robot interact with each other through the TINAH board – a microcontroller board built specifically for the Engineering Physics 253 course.
 									</p>
 
@@ -89,7 +89,7 @@
 										<h2>Infrared Sensor Circuit</h2>
 									</header>
 									<p>
-									In order to be able to navigate the upper portion of the course, where pets 5 and 6 are placed, our robot needs to be able to detect and measure the signal being emitted by the 10kHz Infrared beacons. QSD124 IR phototransistors were used in order to sense the IR. The raw signal was passed through a DC block circuit, then various amplification and filtering circuits, and eventually through a peak detecting circuit in order to obtain a DC voltage signal with a magnitude proportional to the amount of 10kHz Infrared that the sensor is seeing at that moment in time.
+									In order to be able to navigate the upper portion of the course, where pets 5 and 6 are placed, our robot needs to be able to detect and measure the signal being emitted by 10kHz Infrared beacons. QSD124 IR phototransistors were used in order to sense the IR signal. The raw signal was passed through a DC block circuit, then various amplification and filtering circuits, and eventually through a peak detecting circuit in order to obtain a DC voltage signal that could be processed by our TINAH board.
 									In this circuit, we used 3 band pass filters in series to steepen the slope of the bode plot on either side of the 10kHz frequency mark, allowing us to detect only these signals. We have chosen component values such that each filter has a gain of 2 and the signal strength is not diminished by the inclusion of the extra band-pass filters. Please refer to the figure below.
 									</p>
 									<a href="#" class="image featured">
@@ -101,7 +101,7 @@
 										<h2>Power Distribution Circuit</h2>
 									</header>
 									<p>
-										In order to provide our robot's various circuits with the proper supply voltages, we created a circuit dedicated to providing +15V, GND, +5V, and -5V voltage rails. This circuit also allowed for the entire power of the robot to be turned on or off using one switch acting through relay.
+										In order to provide our robot's various circuits with the proper supply voltages, we created a circuit dedicated to providing +15V, GND, +5V, and -5V voltage rails. This circuit also allows for the entire power of the robot to be turned controlled using only one switch acting through relay.
 									</p>
 									<a href="#" class="image featured">
 										<img src="images/powerCircuit.jpg" alt="" />
